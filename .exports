@@ -29,9 +29,7 @@ export LESS_TERMCAP_md="${yellow}";
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-#custom imports
-export JAVA_HOME="/th/apps/java/jdk8"
-export ANT_HOME="/th/apps/apache-ant-1.9.2"
-export M2_HOME="/th/apps/apache-maven-3.3.9"
-export MAVEN_OPTS="-Xmx1G -Djava.awt.headless=true"
-export PATH="${JAVA_HOME}/bin:${ANT_HOME}/bin:${M2_HOME}/bin:${PATH}"
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty);
+
